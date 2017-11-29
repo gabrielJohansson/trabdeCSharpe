@@ -1,0 +1,35 @@
+﻿<Window x:Class="trabFinal_Misael_Gabriel.View.frmPageInicial"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:trabFinal_Misael_Gabriel.View"
+        mc:Ignorable="d"
+        Title="Jogo RPG TROCAR NOME/SO colocar como login" Height="600" Width="600" MaxHeight="600" MaxWidth="600" MinHeight="600" MinWidth="600" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
+    <Window.Background>
+        <ImageBrush ImageSource="/trabFinal_Misael_Gabriel;component/Images/principal.jpg" />
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="24*"/>
+            <RowDefinition Height="61*"/>
+            <RowDefinition Height="28*"/>
+            <RowDefinition Height="48*"/>
+            <RowDefinition Height="58*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="62*"/>
+            <ColumnDefinition Width="59*"/>
+            <ColumnDefinition Width="62*"/>
+            <ColumnDefinition Width="50*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="lblUsuario" Content="Usuário" Margin="0,10,56,0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="51" FontFamily="Wide Latin" FontSize="20" Grid.Column="1" Grid.RowSpan="2"  Foreground="Orange"/>
+        <Label x:Name="lblSenha" Content="Senha" Margin="0,8,56,0" Grid.Row="3" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="51" FontFamily="Wide Latin" FontSize="20" Grid.Column="1"  Foreground="Orange"/>
+        <Button x:Name="btnLogin" Content="Logar" Grid.Column="1" Margin="0,24,0,0" Grid.Row="5" VerticalAlignment="Top" Height="57" Click="btnLogin_Click"/>
+        <Button x:Name="btnCreate" Content="Criar Conta" Grid.Column="3" Margin="0,24,0,0" Grid.Row="5" VerticalAlignment="Top" Height="57" Click="btnCreate_Click"/>
+        <TextBox x:Name="txtSenha" HorizontalAlignment="Left" Height="61" Margin="0,10,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="373" Grid.ColumnSpan="3" FontFamily="Wide Latin" FontSize="16" Grid.Column="1"/>
+        <TextBox x:Name="txtUsuario" Grid.Column="1" HorizontalAlignment="Left" Height="61" Margin="0,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="373" Grid.ColumnSpan="3" FontFamily="Wide Latin" FontSize="16" Grid.Row="2"/>
+    </Grid>
+</Window>

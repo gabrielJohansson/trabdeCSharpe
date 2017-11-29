@@ -1,0 +1,39 @@
+﻿<Window x:Class="trabFinal_Misael_Gabriel.View.frmListPersonagemU"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:trabFinal_Misael_Gabriel.View"
+        mc:Ignorable="d"
+        Title="Personagens" Height="600" Width="600" MaxHeight="600" MaxWidth="600" MinHeight="600" MinWidth="600" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" Closed="Window_Closed" Loaded="Window_Loaded" >
+    <Window.Background>
+        <ImageBrush ImageSource="/trabFinal_Misael_Gabriel;component/Images/adm.jpg" />
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="217*"/>
+            <RowDefinition Height="92*"/>
+            <RowDefinition Height="62*"/>
+            <RowDefinition Height="120*"/>
+            <RowDefinition Height="40*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25*"/>
+            <ColumnDefinition Width="237*"/>
+            <ColumnDefinition Width="25*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="dtg" Margin="5,5,5,5" AutoGenerateColumns="False" IsReadOnly="True" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="1"  MouseDoubleClick="dtg_MouseDoubleClick">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="colNome"  Header="Nome" Width="50*" Binding="{Binding Nome}"/>
+                <DataGridTextColumn x:Name="colEle"  Header="Elemento" Width="50*" Binding="{Binding Elemento}"/>
+                <DataGridTextColumn x:Name="colLvl"  Header="Lvl" Width="20*" Binding="{Binding Level}"/>
+                <DataGridTextColumn x:Name="colMissao"  Header="Progresso" Width="20*" Binding="{Binding Missao}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button x:Name="btnSair" Content="Voltar" Grid.Column="1"  Margin="70,40,130,33" Grid.Row="4" Click="btnSair_Click"  />
+        <Button x:Name="btnDel" Content="Deletar" Grid.Column="1"  Margin="70,14,130,10" Grid.Row="3" Click="btnDel_Click" />
+        <TextBox x:Name="txtNome" Grid.Column="1"  Margin="70,35,78,25" Grid.Row="2" TextWrapping="Wrap" IsReadOnly="True" />
+    </Grid>
+</Window>
