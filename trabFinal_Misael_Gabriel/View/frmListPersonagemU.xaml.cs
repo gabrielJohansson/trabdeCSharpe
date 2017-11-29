@@ -42,7 +42,7 @@ namespace trabFinal_Misael_Gabriel.View
             //carrega o datagrid com seus chars
             //testando com usuarios !!
             //trocar dps
-            dtg.ItemsSource = UsuarioDAO.RetornarUsuarios();
+          //  dtg.ItemsSource = UsuarioDAO.RetornarUsuarios();
         }
 
         private void btnSair_Click(object sender, RoutedEventArgs e)
