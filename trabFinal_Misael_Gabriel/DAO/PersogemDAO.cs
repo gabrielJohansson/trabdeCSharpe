@@ -33,6 +33,11 @@ namespace trabFinal_Misael_Gabriel.DAO
             return ctx.Personagens.ToList();
         }
 
+        public static List<Personagem> RetornarPersonagensUser(int id)
+        {
+            return ctx.Personagens.Where(x => x.user.IDUsuario == id).ToList();
+        }
+
         //retorna os personagem do usuario
         public static List<Personagem> RetornarPersonagensUsuario(Usuario u)
         {
@@ -60,9 +65,17 @@ namespace trabFinal_Misael_Gabriel.DAO
         //delete
         public static bool RemoverPersonagem(Personagem p)
         {
+            Usuario u = new Usuario();
+            u.IDUsuario = 9;
+            u= UsuarioDAO.BuscarUsuarioPorId(u);
+            p.user = u;
+            //vai mandar para o cemitério
+            //manda para o id dessa conta
+            //cemiterio aq está com id 9
+            //trocar dps
             try
             {
-                ctx.Personagens.Remove(p);
+                ctx.Entry(p).State = EntityState.Modified;
                 ctx.SaveChanges();
                 return true;
             }

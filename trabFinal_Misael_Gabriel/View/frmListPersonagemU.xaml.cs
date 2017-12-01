@@ -39,10 +39,8 @@ namespace trabFinal_Misael_Gabriel.View
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //carrega o datagrid com seus chars
-            //testando com usuarios !!
-            //trocar dps
-          //  dtg.ItemsSource = UsuarioDAO.RetornarUsuarios();
+            //carrega o datagrid com seus chars          
+            dtg.ItemsSource = PersogemDAO.RetornarPersonagensUser(u.IDUsuario);
         }
 
         private void btnSair_Click(object sender, RoutedEventArgs e)
@@ -52,8 +50,8 @@ namespace trabFinal_Misael_Gabriel.View
             Close();
         }
 
-        //trocar por personagem
-        //Usuario p = new Usuario();
+        
+        Personagem p = new Personagem();
 
         private void btnDel_Click(object sender, RoutedEventArgs e)
         {
@@ -61,18 +59,20 @@ namespace trabFinal_Misael_Gabriel.View
             MessageBoxResult resultado = MessageBox.Show("Deseja Deletar Mesmo?", "Apagar", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (resultado == MessageBoxResult.Yes)
             {
-                //trocar por personagem
-
-                /* if( UsuarioDAO.RemoverUsuario(p))
+                
+                //remover personagem vai ser a troca de idusuario para um user definido.
+                //esse uservai ser como um cemiterio de personagens
+                //para n dar conflito com os logs
+                 if(PersogemDAO.RemoverPersonagem(p))
                   {
                       MessageBox.Show("Sucesso");
                       dtg.ItemsSource = null;
-                      dtg.ItemsSource = metodo para pegar os chars;
+                      dtg.ItemsSource = PersogemDAO.RetornarPersonagensUser(u.IDUsuario);
 
-                      //Usuario p = new Usuario();
-                      txtNome.Text = "";
+                    Personagem p = new Personagem();
+                       txtNome.Text = "";
                   }
-                  */
+                  
             }
         }
 
@@ -82,8 +82,8 @@ namespace trabFinal_Misael_Gabriel.View
             //trocar por personagem
             //configurar para n vir null
             //fazer if
-           // p = (Usuario)dtg.SelectedItem;
-            //txtNome.Text= p.Nome;
+            p = (Personagem)dtg.SelectedItem;
+            txtNome.Text= p.Nome;
         }
     }
 }

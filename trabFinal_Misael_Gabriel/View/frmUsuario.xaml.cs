@@ -39,7 +39,9 @@ namespace trabFinal_Misael_Gabriel.View
             List<Personagem> p = PersogemDAO.RetornarPersonagensUsuario(u);
             if (p.Count < 3)
             {
-                //ir cadastrar
+                frmCadastroPersonagem frm = new frmCadastroPersonagem(u.IDUsuario);
+                frm.Show();
+                Close();
             }
             else
             {

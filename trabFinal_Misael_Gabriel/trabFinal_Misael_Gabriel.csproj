@@ -93,6 +93,9 @@
     <Compile Include="View\frmAlterarDadosU.xaml.cs">
       <DependentUpon>frmAlterarDadosU.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\frmCadastroPersonagem.xaml.cs">
+      <DependentUpon>frmCadastroPersonagem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\frmCadastroUsuario.xaml.cs">
       <DependentUpon>frmCadastroUsuario.xaml</DependentUpon>
     </Compile>
@@ -160,6 +163,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\frmCadastroPersonagem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\frmCadastroUsuario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -195,6 +202,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\loja.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\agua.png" />
+    <Resource Include="Images\ar.png" />
+    <Resource Include="Images\fogo.png" />
+    <Resource Include="Images\terra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\type1.jpg" />
+    <Resource Include="Images\type2.jpg" />
+    <Resource Include="Images\type3.jpg" />
+    <Resource Include="Images\type4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\personagem.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
