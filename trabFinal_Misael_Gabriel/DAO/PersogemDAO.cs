@@ -43,6 +43,13 @@ namespace trabFinal_Misael_Gabriel.DAO
         {
             return ctx.Personagens.Where(x => x.user.IDUsuario==u.IDUsuario).ToList();
         }
+
+
+        //retorna os char do adm
+        public static List<Personagem> returnPAdm()
+        {
+            return ctx.Personagens.Where(x => x.user.Adm == true).ToList();
+        }
         //busca por ID
         public static Personagem BuscarPersonagemPorId(Personagem p)
         {

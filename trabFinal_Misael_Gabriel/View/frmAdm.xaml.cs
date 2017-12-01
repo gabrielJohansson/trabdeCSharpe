@@ -21,14 +21,18 @@ namespace trabFinal_Misael_Gabriel.View
     /// </summary>
     public partial class frmAdm : Window
     {
-        public frmAdm()
+        Usuario u = new Usuario();
+        public frmAdm(int id)
         {
+            this.u.IDUsuario = id;
+            //Metodo para linkar o id no obj da page
+            u = UsuarioDAO.BuscarUsuarioPorId(u);
             InitializeComponent();
         }
 
         private void btnSair_Click(object sender, RoutedEventArgs e)
         {
-            //voltar ao inicio
+            //voltar ao INICIO
             frmPageInicial frm = new frmPageInicial();
             frm.Show();
             Close();
@@ -43,8 +47,9 @@ namespace trabFinal_Misael_Gabriel.View
         private void btnCriarMissao_Click(object sender, RoutedEventArgs e)
         {
             //vai para a page de criaçao
-            //tem a opção de criar um char novo ou de usar um já cadastrado pelo adm
-            //parecido com a criaçao de char,mas tem campos para xp gold ,nome e descr
+            frmCadastroMissao frm = new frmCadastroMissao(u.IDUsuario);
+            frm.Show();
+            Close();
         }
 
         private void btnAlterarMissao_Click(object sender, RoutedEventArgs e)
@@ -66,6 +71,12 @@ namespace trabFinal_Misael_Gabriel.View
             //abre uma lista de personagens e sua ultima missao ao lado
             //select abre o log por data
             //select abre os detalhes do combate!
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            u.UltimaConexao = DateTime.Now;
+            UsuarioDAO.AlterarUsuario(u);
         }
     }
 }

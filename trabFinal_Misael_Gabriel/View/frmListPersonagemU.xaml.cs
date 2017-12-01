@@ -79,9 +79,7 @@ namespace trabFinal_Misael_Gabriel.View
         private void dtg_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             //pega o obj da row
-            //trocar por personagem
-            //configurar para n vir null
-            //fazer if
+            
             p = (Personagem)dtg.SelectedItem;
             txtNome.Text= p.Nome;
         }

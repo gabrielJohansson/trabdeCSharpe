@@ -52,7 +52,7 @@ namespace trabFinal_Misael_Gabriel.View
                     if(c.Adm==true)
                     {
                         //ir para adm
-                        frmAdm frm = new frmAdm();
+                        frmAdm frm = new frmAdm(c.IDUsuario);
                         frm.Show();
                         Close();
                     }

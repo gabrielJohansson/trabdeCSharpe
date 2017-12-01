@@ -90,6 +90,9 @@ namespace trabFinal_Misael_Gabriel.View
             //manda para a tela de escolha de char
             //na tela de char clicka no char
             //aparece as quest disponivel
+            //fazer dropdow dos chars
+            //escolheu abre um grid
+            //faz igual a  amostra dos pers
         }
 
         private void btnLoja_Click(object sender, RoutedEventArgs e)

@@ -93,6 +93,9 @@
     <Compile Include="View\frmAlterarDadosU.xaml.cs">
       <DependentUpon>frmAlterarDadosU.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\frmCadastroMissao.xaml.cs">
+      <DependentUpon>frmCadastroMissao.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\frmCadastroPersonagem.xaml.cs">
       <DependentUpon>frmCadastroPersonagem.xaml</DependentUpon>
     </Compile>
@@ -163,6 +166,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\frmCadastroMissao.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\frmCadastroPersonagem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -217,6 +224,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\personagem.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\missao.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
