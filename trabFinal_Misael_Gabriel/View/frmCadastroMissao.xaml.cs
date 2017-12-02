@@ -39,14 +39,39 @@ namespace trabFinal_Misael_Gabriel.View
             
         }
 
-        string nome="";
-        string descricao="";
-        double gold=0;
-        double exp=0;
+       
         private void btnVCadastrar_Click(object sender, RoutedEventArgs e)
         {
             //cadastra a missao
             //verificar se tudo está preenchido
+            int idP = (int)comboBox.SelectedValue;
+            Personagem p = new Personagem();
+            p.IDPesonagem = idP;
+            p = PersogemDAO.BuscarPersonagemPorId(p);
+            if (txtNome.Text.Trim() == string.Empty || txtDescr.Text.Trim() == string.Empty || txtExp.Text.Trim() == string.Empty|| txtGold.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Preencha todos os campos");
+
+            }
+            else
+            {
+                Missao m = new Missao { Name = txtNome.Text, Descricao = txtDescr.Text, ExperienciaConcedida=Convert.ToDouble(txtExp.Text),GoldConcedido= Convert.ToDouble(txtGold.Text), personagem = p };
+
+                if (MissaoDAO.CadastrarMissao(m))
+                {
+                    //cadastra
+                    MessageBox.Show("Cadastro Efetuado com Sucesso ");
+                    frmAdm frm = new frmAdm(u.IDUsuario);
+                    frm.Show();
+                    Close();
+                }
+                else
+                {
+                    //tirar isso dps
+                    MessageBox.Show("Erro no Banco");
+                }
+
+            }
             //volta para adm
         }
 
@@ -57,13 +82,18 @@ namespace trabFinal_Misael_Gabriel.View
             //manda para o adm cadastro p 
             //manda a missão
             //ao cadastrar o personagem lá já vincula ele na missão
-            /*
-            int idP = (int)comboBox.SelectedValue;
-            Personagem p =new Personagem();
-            p.IDPersonagem=idP;
-            p = PersogemDAO.BuscarPersonagemPorId(p);
-            Missao m = new Missao { Nome = txtNome.Text, Preco = Convert.ToDouble(txtPreco.Text),personagem = p };
-            */
+            if (txtNome.Text.Trim() == string.Empty || txtDescr.Text.Trim() == string.Empty || txtExp.Text.Trim() == string.Empty || txtGold.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Preencha todos os campos");          
+            }
+            else
+            {
+                Missao m = new Missao { Name = txtNome.Text, Descricao = txtDescr.Text, ExperienciaConcedida = Convert.ToDouble(txtExp.Text), GoldConcedido = Convert.ToDouble(txtGold.Text) };
+                frmCadastroPersonagemADM frm = new frmCadastroPersonagemADM(u.IDUsuario, m.Name, m.Descricao, m.ExperienciaConcedida, m.GoldConcedido);
+                frm.Show();
+                Close();
+
+            }
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -75,9 +105,18 @@ namespace trabFinal_Misael_Gabriel.View
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             //preenche o drop down com os personagens q tem o user com adm==true
+            //!!!!!!!!!!!!!
+            //trocar ara isso dps
             comboBox.ItemsSource = PersogemDAO.returnPAdm();
+            //comboBox.ItemsSource = PersogemDAO.RetornarPersonagens();
             comboBox.DisplayMemberPath = "Nome";
-            comboBox.SelectedValuePath = "user.IDUsuario";
+            comboBox.SelectedValuePath = "IDPesonagem";
+
+            if (comboBox.Items.IsEmpty)
+            {
+                comboBox.IsHitTestVisible = false;
+                btnVCadastrar.IsEnabled = false;
+            }
             
         }
 

@@ -13,7 +13,7 @@ namespace trabFinal_Misael_Gabriel.DAO
         private static Context ctx = Singleton.Instance.Context;
 
         //Create
-        public bool CadastrarMissao(Missao m)
+        public static bool CadastrarMissao(Missao m)
         {
             try
             {

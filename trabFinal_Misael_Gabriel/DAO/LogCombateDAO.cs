@@ -14,7 +14,7 @@ namespace trabFinal_Misael_Gabriel.DAO
         private static Context ctx = Singleton.Instance.Context;
 
         //Create
-        public bool CadastrarLogCombate(LogCombate lg)
+        public static bool CadastrarLogCombate(LogCombate lg)
         {
             try
             {

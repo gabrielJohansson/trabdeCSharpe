@@ -99,6 +99,9 @@
     <Compile Include="View\frmCadastroPersonagem.xaml.cs">
       <DependentUpon>frmCadastroPersonagem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\frmCadastroPersonagemADM.xaml.cs">
+      <DependentUpon>frmCadastroPersonagemADM.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\frmCadastroUsuario.xaml.cs">
       <DependentUpon>frmCadastroUsuario.xaml</DependentUpon>
     </Compile>
@@ -171,6 +174,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\frmCadastroPersonagem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\frmCadastroPersonagemADM.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

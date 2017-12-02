@@ -35,7 +35,7 @@
         <Label x:Name="lblNome" Content="Nome" Margin="5,5,5,5" Grid.Column="1" FontFamily="Wide Latin" FontSize="20"  Foreground="White" Grid.Row="1" Grid.RowSpan="11" Grid.ColumnSpan="2"/>
         <Label x:Name="lblDescr" Content="Descrição" Margin="5,5,5,5" Grid.Column="1" FontFamily="Wide Latin" FontSize="20"  Foreground="White" Grid.Row="3" Grid.ColumnSpan="2"/>
         <Label x:Name="lblGold" Content="Gold" Margin="5,5,5,5" Grid.Column="1" FontFamily="Wide Latin" FontSize="20"  Foreground="White" Grid.Row="5" Grid.ColumnSpan="2"/>
-        <Label x:Name="lblExp" Margin="5,5,5,5" Grid.Column="1" FontFamily="Wide Latin" FontSize="20"  Foreground="White" Grid.Row="7" Grid.RowSpan="5" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblExp" Content="Experiência" Margin="5,5,5,5" Grid.Column="1" FontFamily="Wide Latin" FontSize="20"  Foreground="White" Grid.Row="7" Grid.ColumnSpan="2"/>
         <Label x:Name="lblPers" Content="Personagem da Missão" Margin="5,5,5,5" Grid.Column="1" FontFamily="Wide Latin" FontSize="20"  Foreground="White" Grid.Row="9" Grid.ColumnSpan="2"/>
 
 
