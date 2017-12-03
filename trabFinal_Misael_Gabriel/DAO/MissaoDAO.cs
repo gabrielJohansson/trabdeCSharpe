@@ -32,6 +32,14 @@ namespace trabFinal_Misael_Gabriel.DAO
         {
             return ctx.Missoes.Include(x => x.personagem).ToList();
         }
+
+        //retorna as missoes q o char pode fazer
+        //retorna com o personagem
+        public static List<Missao> RetornarMissoesP(int id)
+        {
+            return ctx.Missoes.Where(x => x.IDMissao < (id+2)).Include(x => x.personagem).ToList();
+        }
+
         //busca por ID
         public static Missao BuscarMissaoPorId(Missao m)
         {

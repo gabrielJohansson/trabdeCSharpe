@@ -68,7 +68,24 @@ namespace trabFinal_Misael_Gabriel.DAO
             return ctx.Personagens.Find(p.IDPesonagem);
         }
 
-       
+       //return feridos
+       public static List<Personagem> returnFeridos(int id)
+        {
+            return ctx.Personagens.Where(x => x.user.IDUsuario == id && x.VidaAtual!=x.VidaTotal).ToList();
+        }
+
+        //cura todos os personagens feridos dele
+        public static void curarFeridos(int id)
+        {
+            List<Personagem> p =ctx.Personagens.Where(x => x.user.IDUsuario == id && x.VidaAtual != x.VidaTotal).ToList();
+            for(int i=0;i<p.Count;i++)
+            {
+                Personagem pe = p[i];
+                pe.VidaAtual = pe.VidaTotal;
+                ctx.Entry(pe).State = EntityState.Modified;
+                ctx.SaveChanges();
+            }
+        }
         //update
         public static bool AlterarPersonagem(Personagem p)
         {

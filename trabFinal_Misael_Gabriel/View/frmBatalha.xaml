@@ -1,0 +1,141 @@
+﻿<Window x:Class="trabFinal_Misael_Gabriel.View.frmBatalha"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:trabFinal_Misael_Gabriel.View"
+        mc:Ignorable="d"
+         Title="Batalha" Height="600" Width="600" MaxHeight="600" MaxWidth="600" MinHeight="600" MinWidth="600" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" Loaded="Window_Loaded" Closing="Window_Closing">
+    <Window.Background>
+        <ImageBrush ImageSource="/trabFinal_Misael_Gabriel;component/Images/personagem.jpg" />
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="29*"/>
+            <RowDefinition Height="163*"/>
+            <RowDefinition Height="28*"/>
+            <RowDefinition Height="24*"/>
+            <RowDefinition Height="41*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="21*"/>
+            <ColumnDefinition Width="123*"/>
+            <ColumnDefinition Width="132*"/>
+            <ColumnDefinition Width="20*"/>
+        </Grid.ColumnDefinitions>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <Border   
+            x:Name="bdPersonagem"
+            BorderBrush="Black"
+            BorderThickness="1"
+            CornerRadius="4"
+            Background="LightBlue"
+            RenderTransformOrigin="0.5,0" Grid.Column="1" Margin="10,10,10,44" Grid.Row="1">
+            <Border.RenderTransform>
+                <RotateTransform x:Name="transform" />
+            </Border.RenderTransform>
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="20" />
+            </Border.Effect>
+            <Button x:Name="btnAtk" VerticalAlignment="Bottom"
+                HorizontalAlignment="Right"
+                Margin="0,0,85,-135"
+                Padding="5"
+                Content="Atacar" Width="110" Click="btnAtk_Click">
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Button.Click">
+                        <BeginStoryboard>
+                            <Storyboard FillBehavior="Stop">
+                                <DoubleAnimation Storyboard.TargetName="transform2"
+                                             Storyboard.TargetProperty="Angle"
+                                             From="5"
+                                             Duration="0:0:1.3">
+                                    <DoubleAnimation.EasingFunction>
+                                        <ElasticEase EasingMode="EaseOut"
+                                                 Oscillations="2"
+                                                 Springiness="1" />
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+        </Border>
+
+
+        <Border   
+            x:Name="bdInimigo"
+            BorderBrush="Black"
+            BorderThickness="1"
+            CornerRadius="4"
+            Background="LightBlue"
+            RenderTransformOrigin="0.5,0" Grid.Column="2" Margin="10,10,10,44" Grid.Row="1">
+            <Border.RenderTransform>
+                <RotateTransform x:Name="transform2" />
+            </Border.RenderTransform>
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="20" />
+            </Border.Effect>
+            <Button x:Name="btnInimigo" VerticalAlignment="Bottom"
+                HorizontalAlignment="Center"
+                Margin="179,0,62,-144"
+                Padding="5"
+                Content="Atacar" Click="btnInimigo_Click" Width="1" Height="6" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Button.Click">
+                        <BeginStoryboard>
+                            <Storyboard FillBehavior="Stop">
+
+                                <DoubleAnimation Storyboard.TargetName="transform"
+                                             Storyboard.TargetProperty="Angle"
+                                             From="5"
+                                             BeginTime="0:0:1.0"
+                                             Duration="0:0:1.3">
+                                    <DoubleAnimation.EasingFunction>
+                                        <ElasticEase EasingMode="EaseOut"
+                                                 Oscillations="2"
+                                                 Springiness="1" />
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+        </Border>
+
+        <TextBox x:Name="txtTrun" Grid.Column="1" Grid.ColumnSpan="2" Margin="210,5,230,5" Grid.Row="0" TextWrapping="Wrap" IsReadOnly="True"/>
+        <TextBox x:Name="txtP1" Grid.Column="1"  Margin="5,5,5,5" Grid.Row="2" TextWrapping="Wrap" IsReadOnly="True"/>
+        <TextBox x:Name="txtP2" Grid.Column="2"  Margin="5,5,5,5" Grid.Row="2" TextWrapping="Wrap" IsReadOnly="True"/>
+        <Button x:Name="btnDesistir" Content="Desisitir" Grid.Column="1"  Margin="90,10,90,10" Grid.Row="4"  Grid.ColumnSpan="2" Click="btnDesistir_Click"/>
+    </Grid>
+</Window>

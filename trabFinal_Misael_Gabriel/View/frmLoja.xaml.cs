@@ -38,7 +38,16 @@ namespace trabFinal_Misael_Gabriel.View
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             txtGold.Text = "Gold :" + u.Gold;
+            cboPersonagem.ItemsSource = PersogemDAO.returnFeridos(u.IDUsuario);
+            cboPersonagem.DisplayMemberPath = "Nome";
+            cboPersonagem.SelectedValuePath = "IDPesonagem";
             //carregar o cb box e o botao de cura
+            if(cboPersonagem.Items.Count==0)
+            {
+                btnComprar.IsEnabled = false;
+                btnHeal.IsEnabled = false;
+                MessageBox.Show("Todos seus Personagens estão com Vida Cheia");
+            }
             //cbo vai carregar so os que estao sem a vida máxima
             //btn vai estar disponivel se pelo menos um esta sem vida mxm
         }
@@ -46,16 +55,45 @@ namespace trabFinal_Misael_Gabriel.View
         private void btnHeal_Click(object sender, RoutedEventArgs e)
         {
             //cura tds os perssonagens do user
-            //preço vai ser por pers curado
+            if (u.Gold > u.Gold - (100 * cboPersonagem.Items.Count))
+            {
+                PersogemDAO.curarFeridos(u.IDUsuario);
+                u.Gold = u.Gold - (100 * cboPersonagem.Items.Count);
+                UsuarioDAO.AlterarUsuario(u);
+                frmUsuario frm = new frmUsuario(u.IDUsuario);
+                frm.Show();
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Você Não Possui Gold para isso");
+            }
         }
 
         private void btnComprar_Click(object sender, RoutedEventArgs e)
         {
+            int idP = (int)cboPersonagem.SelectedValue;
+            Personagem p = new Personagem();
+            p.IDPesonagem = idP;
+            p = PersogemDAO.BuscarPersonagemPorId(p);
+            txtPersonagem.Text = p.Nome;
             //escolhe o q ta no selecionado
-            //vai ficar num text block?
-            //vai
-            //fazer os binds
-            //!!
+            if (u.Gold > u.Gold - 100)
+            {
+
+                u.Gold = u.Gold - 100;
+                UsuarioDAO.AlterarUsuario(u);
+                p.VidaAtual = p.VidaTotal;
+                PersogemDAO.AlterarPersonagem(p);
+                frmUsuario frm = new frmUsuario(u.IDUsuario);
+                frm.Show();
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Você Não Possui Gold para isso");
+            }
+
         }
 
         private void btnVoltar_Click(object sender, RoutedEventArgs e)

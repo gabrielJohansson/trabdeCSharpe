@@ -88,23 +88,21 @@ namespace trabFinal_Misael_Gabriel.View
         private void btnMissao_Click(object sender, RoutedEventArgs e)
         {
             //manda para a tela de escolha de char
-            //na tela de char clicka no char
-            //aparece as quest disponivel
-            //fazer dropdow dos chars
-            //escolheu abre um grid
-            //faz igual a  amostra dos pers
+            frmSelMissao frm = new frmSelMissao(u.IDUsuario);
+            frm.Show();
+            Close();
         }
 
         private void btnLoja_Click(object sender, RoutedEventArgs e)
         {
+            //testar as curas !!!!!!!!
             frmLoja frm = new frmLoja(u.IDUsuario);
             frm.Show();
             Close();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            //USAR ISSO EM MUITAS TELAS!!!!!!!!!!!!!!!!!
+        {           
             //atualizar a data
             u.UltimaConexao = DateTime.Now;
             UsuarioDAO.AlterarUsuario(u);

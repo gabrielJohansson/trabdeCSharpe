@@ -87,6 +87,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\DetalheLog.cs" />
+    <Compile Include="Util\Utilidade.cs" />
     <Compile Include="View\frmAdm.xaml.cs">
       <DependentUpon>frmAdm.xaml</DependentUpon>
     </Compile>
@@ -98,6 +99,9 @@
     </Compile>
     <Compile Include="View\frmAlterarMissao.xaml.cs">
       <DependentUpon>frmAlterarMissao.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmBatalha.xaml.cs">
+      <DependentUpon>frmBatalha.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\frmCadastroMissao.xaml.cs">
       <DependentUpon>frmCadastroMissao.xaml</DependentUpon>
@@ -122,6 +126,9 @@
     </Compile>
     <Compile Include="View\frmPageInicial.xaml.cs">
       <DependentUpon>frmPageInicial.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmSelMissao.xaml.cs">
+      <DependentUpon>frmSelMissao.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\frmUsuario.xaml.cs">
       <DependentUpon>frmUsuario.xaml</DependentUpon>
@@ -186,6 +193,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\frmBatalha.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\frmCadastroMissao.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -215,6 +226,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\frmPageInicial.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\frmSelMissao.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -58,10 +58,7 @@ namespace trabFinal_Misael_Gabriel.View
             frm.Show();
             Close();
             //lista as missoes e deixa alterar o nome,gold,exp e o char nela
-            //fazer como o data grid por toque
-            //ao selecionar mostra o nome da quest
-            //clicka em alterar e vai ser igual ao cadastro
-            //nunca excluir
+           
         }
 
         private void btnRegistros_Click(object sender, RoutedEventArgs e)
