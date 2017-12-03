@@ -28,5 +28,9 @@ namespace trabFinal_Misael_Gabriel.Model
 
         public Usuario user { get; set; }
 
+     public Personagem()
+        {
+            Usuario user = new Usuario();
+        }
     }
 }

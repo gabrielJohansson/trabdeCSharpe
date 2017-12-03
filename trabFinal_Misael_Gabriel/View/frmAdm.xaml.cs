@@ -54,6 +54,9 @@ namespace trabFinal_Misael_Gabriel.View
 
         private void btnAlterarMissao_Click(object sender, RoutedEventArgs e)
         {
+            frmListMissaoAdm frm = new frmListMissaoAdm(u.IDUsuario);
+            frm.Show();
+            Close();
             //lista as missoes e deixa alterar o nome,gold,exp e o char nela
             //fazer como o data grid por toque
             //ao selecionar mostra o nome da quest

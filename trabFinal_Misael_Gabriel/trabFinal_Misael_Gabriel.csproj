@@ -90,8 +90,14 @@
     <Compile Include="View\frmAdm.xaml.cs">
       <DependentUpon>frmAdm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\frmAlteraMissaoP.xaml.cs">
+      <DependentUpon>frmAlteraMissaoP.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\frmAlterarDadosU.xaml.cs">
       <DependentUpon>frmAlterarDadosU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmAlterarMissao.xaml.cs">
+      <DependentUpon>frmAlterarMissao.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\frmCadastroMissao.xaml.cs">
       <DependentUpon>frmCadastroMissao.xaml</DependentUpon>
@@ -104,6 +110,9 @@
     </Compile>
     <Compile Include="View\frmCadastroUsuario.xaml.cs">
       <DependentUpon>frmCadastroUsuario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmListMissaoAdm.xaml.cs">
+      <DependentUpon>frmListMissaoAdm.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\frmListPersonagemU.xaml.cs">
       <DependentUpon>frmListPersonagemU.xaml</DependentUpon>
@@ -165,7 +174,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\frmAlteraMissaoP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\frmAlterarDadosU.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\frmAlterarMissao.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -182,6 +199,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\frmCadastroUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\frmListMissaoAdm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

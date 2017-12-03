@@ -27,17 +27,29 @@ namespace trabFinal_Misael_Gabriel.DAO
                 return false;
             }
         }
+
+        //adicionar e retornar 
+        public static Personagem CadastrarPersonagemEReturnID(Personagem p)
+        {
+            
+                //gravando usuario no banco
+                ctx.Personagens.Add(p);
+                ctx.SaveChanges();
+                Personagem a = new Personagem();
+                return ctx.Personagens.FirstOrDefault(x => DateTime.Equals(x.UltimaConexao, x.UltimaConexao) && x.Nome.Equals(p.Nome) && x.user.IDUsuario == p.user.IDUsuario);
+
+        }
         //rtorna todos
         public static List<Personagem> RetornarPersonagens()
         {
             return ctx.Personagens.ToList();
         }
-
+        //
         public static List<Personagem> RetornarPersonagensUser(int id)
         {
             return ctx.Personagens.Where(x => x.user.IDUsuario == id).ToList();
         }
-
+      
         //retorna os personagem do usuario
         public static List<Personagem> RetornarPersonagensUsuario(Usuario u)
         {
@@ -55,6 +67,8 @@ namespace trabFinal_Misael_Gabriel.DAO
         {
             return ctx.Personagens.Find(p.IDPesonagem);
         }
+
+       
         //update
         public static bool AlterarPersonagem(Personagem p)
         {

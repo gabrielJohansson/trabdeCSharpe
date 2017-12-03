@@ -27,16 +27,17 @@ namespace trabFinal_Misael_Gabriel.DAO
                 return false;
             }
         }
-        //read
+        //retorna com o personagem
         public static List<Missao> RetornarMissoes()
         {
-            return ctx.Missoes.ToList();
+            return ctx.Missoes.Include(x => x.personagem).ToList();
         }
         //busca por ID
         public static Missao BuscarMissaoPorId(Missao m)
         {
             return ctx.Missoes.Find(m.IDMissao);
         }
+
         //update
         public static bool AlterarMissao(Missao m)
         {

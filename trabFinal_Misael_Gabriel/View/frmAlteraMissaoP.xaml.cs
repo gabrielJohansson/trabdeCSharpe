@@ -18,48 +18,27 @@ using trabFinal_Misael_Gabriel.Model;
 namespace trabFinal_Misael_Gabriel.View
 {
     /// <summary>
-    /// Interaction logic for frmCadastroPersonagemADM.xaml
+    /// Interaction logic for frmAlteraMissaoP.xaml
     /// </summary>
-    public partial class frmCadastroPersonagemADM : Window
+    public partial class frmAlteraMissaoP : Window
     {
         Usuario u = new Usuario();
         Missao m = new Missao();
-        public frmCadastroPersonagemADM(int id,string nome,string descr,double exp,double gold)
+        string nome;
+        string d;
+        double gold;
+        double exp;
+        public frmAlteraMissaoP(int id,string nome,string d,double exp,double gold,int id2)
         {
+            this.nome = nome;
+            this.d = d;
+            this.exp = exp;
+            this.gold = gold;
             this.u.IDUsuario = id;
             u = UsuarioDAO.BuscarUsuarioPorId(u);
-            this.m.Name = nome;
-            this.m.Descricao = descr;
-            this.m.ExperienciaConcedida = exp;
-            this.m.GoldConcedido = gold;
+            this.m.IDMissao = id2;
+            m= MissaoDAO.BuscarMissaoPorId(m);
             InitializeComponent();
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        private void txt_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        {
-            Regex regex = new Regex("^[.][0-9]+$|^[0-9]*[.]{0,1}[0-9]*$");
-            e.Handled = !regex.IsMatch((sender as TextBox).Text.Insert((sender as TextBox).SelectionStart, e.Text));
-        }
-
-        private void btnVoltar_Click(object sender, RoutedEventArgs e)
-        {
-            frmAdm frm = new frmAdm(u.IDUsuario);
-            frm.Show();
-            Close();
-
         }
 
         private void btnVCadastrar_Click(object sender, RoutedEventArgs e)
@@ -119,11 +98,11 @@ namespace trabFinal_Misael_Gabriel.View
                 p.Experiencia = 0;
                 p.Level = Convert.ToInt32(txtLVL.Text);
                 p.Missao = 0;
-                p.UltimaConexao = DateTime.Now;
+                
                 switch (p.Elemento)
                 {
                     case "Agua":
-                        p.VidaTotal = 900+(p.Level*100);
+                        p.VidaTotal = 900 + (p.Level * 100);
                         p.VidaAtual = p.VidaTotal;
                         p.Iniciativa = 3;
                         p.Ataque = 40 + (p.Level * 10);
@@ -158,31 +137,44 @@ namespace trabFinal_Misael_Gabriel.View
                 }
                 else
                 {
-                    Missao n = new Missao();
+                    p.UltimaConexao = DateTime.Now;
                     //mandando para o banco
-                    if (PersogemDAO.CadastrarPersonagem(p))
-                    {
-                        n.Name = m.Name; n.Descricao = m.Descricao; n.ExperienciaConcedida = n.ExperienciaConcedida; n.GoldConcedido = n.GoldConcedido; n.personagem = p ;
-                        MissaoDAO.CadastrarMissao(m);
-                        MessageBox.Show("Cadastro Efetuado com Sucesso ");
+                    p = PersogemDAO.CadastrarPersonagemEReturnID(p);
+                    
+                        Missao mii = new Missao();
+                        mii = m;
+                        mii.Name = nome;
+                        mii.Descricao = d;
+                        mii.ExperienciaConcedida = exp;
+                        mii.GoldConcedido = gold;
+                        mii.personagem = p;
+                        MissaoDAO.AlterarMissao(mii);
+                        MessageBox.Show("Criado e Alterado com Sucesso ");
                         frmAdm frm = new frmAdm(u.IDUsuario);
                         frm.Show();
                         Close();
-                    }
-                    else
-                    {
-                        //tirar isso dps
-                        MessageBox.Show("Erro no Banco");
-                    }
-
+   
                 }
-            }          
-}
+            }
+        }
+
+        private void btnVoltar_Click(object sender, RoutedEventArgs e)
+        {
+            frmAdm frm = new frmAdm(u.IDUsuario);
+            frm.Show();
+            Close();
+        }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             u.UltimaConexao = DateTime.Now;
             UsuarioDAO.AlterarUsuario(u);
         }
+        private void txt_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("^[.][0-9]+$|^[0-9]*[.]{0,1}[0-9]*$");
+            e.Handled = !regex.IsMatch((sender as TextBox).Text.Insert((sender as TextBox).SelectionStart, e.Text));
+        }
+
     }
 }

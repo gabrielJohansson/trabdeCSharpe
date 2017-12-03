@@ -18,5 +18,10 @@ namespace trabFinal_Misael_Gabriel.Model
         public String Name { get; set; }
         public String Descricao { get; set; }
         public Personagem personagem { get; set; }
+
+        public Missao()
+        {
+            Personagem personagem = new Personagem();
+        }
     }
 }
