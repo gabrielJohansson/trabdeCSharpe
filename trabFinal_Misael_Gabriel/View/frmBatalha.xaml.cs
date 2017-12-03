@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Automation.Peers;
@@ -75,7 +76,7 @@ namespace trabFinal_Misael_Gabriel.View
 
         private void btnInimigo_Click(object sender, RoutedEventArgs e)
         {
-            turn=turn+1;
+            turn =turn+1;
             txtTrun.Text = turn.ToString();
             p.VidaAtual = p.VidaAtual - (Utilidade.atk(m.personagem.Ataque, p.Elemento,m.personagem.Elemento));
             txtP1.Text = "Vida :" + p.VidaAtual + "/" + p.VidaTotal;
@@ -86,8 +87,9 @@ namespace trabFinal_Misael_Gabriel.View
                 frm.Show();
                 Close();
             }
- 
+
             //fazer o registro no log
+
             btnAtk.IsEnabled = true;
         }
 
@@ -111,7 +113,7 @@ namespace trabFinal_Misael_Gabriel.View
                 frm.Show();
                 Close();
             }
-            //registro no log
+            //registro no log            
             btnAtk.IsEnabled = false;
             btnInimigo.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
         }
