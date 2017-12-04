@@ -41,15 +41,17 @@ namespace trabFinal_Misael_Gabriel.View
             comboBox.DisplayMemberPath = "Nome";
             comboBox.SelectedValuePath = "IDPesonagem";
         }
-        Personagem p = new Personagem();
+         Personagem p = new Personagem();
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int idP = (int)comboBox.SelectedValue;
-            Personagem p = new Personagem();
-            p.IDPesonagem = idP;
-            p = PersogemDAO.BuscarPersonagemPorId(p);
-            dtg.ItemsSource = MissaoDAO.RetornarMissoesP(p.Missao);
+            Personagem d = new Personagem();
+            d.IDPesonagem = idP;
+            d = PersogemDAO.BuscarPersonagemPorId(d);
+            MessageBox.Show(d.Nome);
+            dtg.ItemsSource = MissaoDAO.RetornarMissoesP(d.Missao);
             Missao m = new Missao();
+            p = d;
         }
 
         Missao m = new Missao();
@@ -77,9 +79,16 @@ namespace trabFinal_Misael_Gabriel.View
             //manda o personagem e a missao
             if (m.IDMissao != 0 && p.IDPesonagem != 0)
             {
-                frmBatalha frm = new frmBatalha(u.IDUsuario, p.IDPesonagem, m.IDMissao);
-                frm.Show();
-                Close();
+                if (p.VidaAtual < 0 || p.VidaAtual == 0)
+                {
+                    MessageBox.Show("Personagem Morto");
+                }
+                else
+                {
+                    frmBatalha frm = new frmBatalha(u.IDUsuario, p.IDPesonagem, m.IDMissao);
+                    frm.Show();
+                    Close();
+                }
             }
             else
             {

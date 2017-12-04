@@ -26,7 +26,7 @@ namespace trabFinal_Misael_Gabriel.View
     /// </summary>
     public partial class frmBatalha : Window
     {
-        static LogCombate lg = new LogCombate();
+        LogCombate lg = new LogCombate();
         Usuario u = new Usuario();
         Personagem p = new Personagem();
         Missao m = new Missao();
@@ -48,11 +48,12 @@ namespace trabFinal_Misael_Gabriel.View
         int turn = 1;
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
-            lg.missao = m;
-            lg.personagem = p;
-            lg.Data = DateTime.Now;
-            lg = LogCombateDAO.CadastrarLogCombate(lg);
+            LogCombate a = new LogCombate();
+            a.missao = m;
+            a.personagem = p;
+            a.Data = DateTime.Now;
+            a = LogCombateDAO.CadastrarLogCombate(a);
+            lg = a;
             btnInimigo.IsEnabled = false;
 
             ImageBrush brush = Utilidade.returnImage(p.Modelo);
@@ -111,6 +112,8 @@ namespace trabFinal_Misael_Gabriel.View
                 p.VidaAtual = 0;
                 PersogemDAO.AlterarPersonagem(p);
 
+                m.personagem.VidaAtual = m.personagem.VidaTotal;
+                MissaoDAO.AlterarMissao(m);
                 MessageBox.Show("Voce Perdeu");
                 frmUsuario frm = new frmUsuario(u.IDUsuario);
                 frm.Show();
@@ -133,6 +136,8 @@ namespace trabFinal_Misael_Gabriel.View
             u.UltimaConexao = DateTime.Now;
             UsuarioDAO.AlterarUsuario(u);
 
+            m.personagem.VidaAtual = m.personagem.VidaTotal;
+            MissaoDAO.AlterarMissao(m);
 
             p.UltimaConexao = DateTime.Now;
             p.VidaAtual = p.VidaAtual - 100;
@@ -163,6 +168,9 @@ namespace trabFinal_Misael_Gabriel.View
                 dl.Turno = turn;
                 dl.Acao = p.Nome + " Ganhou ";
                 DetalheLogDAO.CadastrarLogDet(dl);
+
+                 m.personagem.VidaAtual = m.personagem.VidaTotal;
+                MissaoDAO.AlterarMissao(m);
 
                 u.UltimaConexao = DateTime.Now;
                 UsuarioDAO.AlterarUsuario(u);
