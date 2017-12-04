@@ -36,7 +36,7 @@
         <Button x:Name="btnVoltar" Content="Voltar" Margin="5,25,5,25" FontFamily="Wide Latin" FontSize="16" Background="#FF686161"  Foreground="Bisque" Grid.Column="1" Grid.Row="4" Click="btnVoltar_Click" />
         <Button x:Name="btnComprar" Content="Escolher" Margin="5,25,5,25" FontFamily="Wide Latin" FontSize="16" Background="#FF686161"  Foreground="Bisque" Grid.Column="3" Grid.Row="4" Click="btnComprar_Click" />
         <Button x:Name="btnHeal" Content="Curar" Margin="30,30,30,30" FontFamily="Wide Latin" FontSize="16" Background="#FF686161"  Foreground="Bisque" Grid.Column="1" Grid.Row="2" Click="btnHeal_Click" />
-        <ComboBox x:Name="cboPersonagem" Grid.Column="3" Margin="5,50,0,51" Grid.Row="2" Width="196" />
+        <ComboBox x:Name="cboPersonagem" Grid.Column="3" Margin="5,50,0,51" Grid.Row="2" Width="196" SelectionChanged="comboBox_SelectionChanged" />
         <TextBox x:Name="txtPersonagem" Grid.Column="3" Margin="10,25,5,25" Grid.Row="3" IsReadOnly="True"/>
         <TextBox x:Name="txtGold" Grid.Column="3" Margin="5,5,5,5" Grid.Row="0" IsReadOnly="True"/>
 

@@ -36,7 +36,7 @@ namespace trabFinal_Misael_Gabriel.DAO
                 ctx.Personagens.Add(p);
                 ctx.SaveChanges();
                 Personagem a = new Personagem();
-                return ctx.Personagens.FirstOrDefault(x => DateTime.Equals(x.UltimaConexao, x.UltimaConexao) && x.Nome.Equals(p.Nome) && x.user.IDUsuario == p.user.IDUsuario);
+                return ctx.Personagens.FirstOrDefault(x => DateTime.Equals(x.UltimaConexao, p.UltimaConexao) && x.Nome.Equals(p.Nome) && x.user.IDUsuario == p.user.IDUsuario);
 
         }
         //rtorna todos

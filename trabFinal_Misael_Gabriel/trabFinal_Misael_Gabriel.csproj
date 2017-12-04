@@ -68,6 +68,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DAO\DetalheLogDAO.cs" />
     <Compile Include="DAO\LogCombateDAO.cs" />
     <Compile Include="DAO\MissaoDAO.cs" />
     <Compile Include="DAO\PersogemDAO.cs" />

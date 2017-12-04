@@ -55,7 +55,7 @@ namespace trabFinal_Misael_Gabriel.View
         private void btnHeal_Click(object sender, RoutedEventArgs e)
         {
             //cura tds os perssonagens do user
-            if (u.Gold > u.Gold - (100 * cboPersonagem.Items.Count))
+            if (u.Gold > u.Gold + (100 * cboPersonagem.Items.Count) || u.Gold<0)
             {
                 PersogemDAO.curarFeridos(u.IDUsuario);
                 u.Gold = u.Gold - (100 * cboPersonagem.Items.Count);
@@ -70,6 +70,16 @@ namespace trabFinal_Misael_Gabriel.View
             }
         }
 
+        private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int idP = (int)cboPersonagem.SelectedValue;
+            Personagem p = new Personagem();
+            p.IDPesonagem = idP;
+            p = PersogemDAO.BuscarPersonagemPorId(p);
+            txtPersonagem.Text = p.Nome;
+        }
+
+
         private void btnComprar_Click(object sender, RoutedEventArgs e)
         {
             int idP = (int)cboPersonagem.SelectedValue;
@@ -78,10 +88,10 @@ namespace trabFinal_Misael_Gabriel.View
             p = PersogemDAO.BuscarPersonagemPorId(p);
             txtPersonagem.Text = p.Nome;
             //escolhe o q ta no selecionado
-            if (u.Gold > u.Gold - 100)
+            if (u.Gold > u.Gold - 100 || u.Gold < 0)
             {
 
-                u.Gold = u.Gold - 100;
+                u.Gold = u.Gold + 100;
                 UsuarioDAO.AlterarUsuario(u);
                 p.VidaAtual = p.VidaTotal;
                 PersogemDAO.AlterarPersonagem(p);

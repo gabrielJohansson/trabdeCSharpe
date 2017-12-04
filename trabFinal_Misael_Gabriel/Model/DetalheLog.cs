@@ -17,5 +17,9 @@ namespace trabFinal_Misael_Gabriel.Model
         public String Acao { get; set; }
 
         public LogCombate log { get; set; }
+        public DetalheLog()
+        {
+            LogCombate log = new LogCombate();
+        }
     }
 }

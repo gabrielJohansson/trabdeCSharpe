@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using trabFinal_Misael_Gabriel.Model;
 
 namespace trabFinal_Misael_Gabriel.Util
 {
@@ -47,5 +48,24 @@ namespace trabFinal_Misael_Gabriel.Util
             return atk;
         }
 
+
+        public static Personagem LevelUp(Personagem p)
+        {
+
+            int qtdexp = 100;
+
+            qtdexp = 100 + (p.Level * 10);
+
+            if(p.Experiencia>qtdexp)
+            {
+                p.Experiencia = p.Experiencia - qtdexp;
+                p.Level = p.Level + 1;
+                p.VidaTotal = p.VidaTotal +  100;
+                p.Ataque = p.Ataque +  10;
+                return p;
+            }
+
+            return p;
+        }
     }
 }

@@ -45,7 +45,7 @@ namespace trabFinal_Misael_Gabriel.View
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int idP = (int)comboBox.SelectedValue;
-            
+            Personagem p = new Personagem();
             p.IDPesonagem = idP;
             p = PersogemDAO.BuscarPersonagemPorId(p);
             dtg.ItemsSource = MissaoDAO.RetornarMissoesP(p.Missao);
@@ -58,7 +58,10 @@ namespace trabFinal_Misael_Gabriel.View
             //pega o obj da row
 
             m = (Missao)dtg.SelectedItem;
-            txtNome.Text = m.Name;
+            if (m != null)
+            {
+                txtNome.Text = m.Name;
+            }
         }
 
         private void btnSair_Click(object sender, RoutedEventArgs e)
