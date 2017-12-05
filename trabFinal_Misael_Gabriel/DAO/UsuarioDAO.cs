@@ -38,7 +38,7 @@ namespace trabFinal_Misael_Gabriel.DAO
             //retorna apenas usuers,n adms
             Usuario f = new Usuario();
             f.Adm = false;
-            return ctx.Usuarios.Where(x => x.Adm==f.Adm).ToList();
+            return ctx.Usuarios.Where(x => x.Adm==f.Adm && !x.Login.Equals("Cemitério")).ToList();
         }
         //busca por ID
         public static Usuario BuscarUsuarioPorId(Usuario s)

@@ -48,7 +48,6 @@ namespace trabFinal_Misael_Gabriel.View
             Personagem d = new Personagem();
             d.IDPesonagem = idP;
             d = PersogemDAO.BuscarPersonagemPorId(d);
-            MessageBox.Show(d.Nome);
             dtg.ItemsSource = MissaoDAO.RetornarMissoesP(d.Missao);
             Missao m = new Missao();
             p = d;

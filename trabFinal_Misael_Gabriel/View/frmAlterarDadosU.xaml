@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:trabFinal_Misael_Gabriel.View"
         mc:Ignorable="d"
-        Title="Alterar Dados" Height="600" Width="600" MaxHeight="600" MaxWidth="600" MinHeight="600" MinWidth="600" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" Closing="Window_Closing">
+        Title="Alterar Dados" Height="600" Width="600" MaxHeight="600" MaxWidth="600" MinHeight="600" MinWidth="600" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
     <Window.Background>
         <ImageBrush ImageSource="/trabFinal_Misael_Gabriel;component/Images/Cadastro.jpg" />
     </Window.Background>
@@ -36,6 +36,7 @@
         <TextBox x:Name="txtSenha"  Grid.ColumnSpan="3" FontFamily="Wide Latin" FontSize="16" Grid.Row="4" Grid.Column="1" Margin="5,5,5,5" />
         <TextBox x:Name="txtNome"   Grid.ColumnSpan="3" FontFamily="Wide Latin" FontSize="16" Grid.Row="6" Grid.Column="1" Margin="5,5,5,5" Loaded="txtNome_Loaded"/>
         <Button x:Name="btnVoltar" Content="Voltar" Grid.Column="1" Margin="30,30,30,30" Grid.Row="8" Click="btnVoltar_Click"/>
+        <Button x:Name="btnDelete" Content="Deletar Conta" Grid.Column="2" Margin="5,30,5,30" Grid.Row="8" Click="btnDelete_Click" />
         <Button x:Name="btnCadastro" Content="Alterar" Grid.Column="3" Margin="30,30,30,30" Grid.Row="8" Click="btnCadastro_Click"/>
     </Grid>
 </Window>

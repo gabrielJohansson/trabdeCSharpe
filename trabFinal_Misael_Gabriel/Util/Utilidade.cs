@@ -15,6 +15,7 @@ namespace trabFinal_Misael_Gabriel.Util
         {
             switch (t)
             {
+                //trocar até desktop
                 case 1:
                 var imagePath = @"C:\Users\Gabriel\Desktop\trabdeC--3814be32c7f01beab5a4f6be8f16fd0062b79964\trabdeC--3814be32c7f01beab5a4f6be8f16fd0062b79964\trabFinal_Misael_Gabriel\Images\type1.jpg";
                 ImageBrush brush = new ImageBrush(new BitmapImage(new Uri(imagePath, UriKind.Absolute)));

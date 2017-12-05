@@ -84,7 +84,7 @@ namespace trabFinal_Misael_Gabriel.View
         private void btnInimigo_Click(object sender, RoutedEventArgs e)
         {
 
-            turn =turn+1;
+           
             txtTrun.Text = turn.ToString();
             int dano = Utilidade.atk(m.personagem.Ataque, p.Elemento, m.personagem.Elemento);
             p.VidaAtual = p.VidaAtual - (Utilidade.atk(m.personagem.Ataque, p.Elemento,m.personagem.Elemento));
@@ -96,6 +96,7 @@ namespace trabFinal_Misael_Gabriel.View
             dlg.Turno = turn;
             dlg.Acao = m.personagem.Nome + " Atacou " + p.Nome + " por " + dano + " de dano";
             DetalheLogDAO.CadastrarLogDet(dlg);
+            turn = turn + 1;
             //fazer o registro no log
 
             if (p.VidaAtual<0)
@@ -150,7 +151,7 @@ namespace trabFinal_Misael_Gabriel.View
 
         private void btnAtk_Click(object sender, RoutedEventArgs e)
         {
-            turn = turn + 1;
+            
             txtTrun.Text = turn.ToString();
             int dano = Utilidade.atk(m.personagem.Ataque, p.Elemento, m.personagem.Elemento);
             m.personagem.VidaAtual = m.personagem.VidaAtual - (Utilidade.atk(p.Ataque,m.personagem.Elemento,p.Elemento));
@@ -161,6 +162,7 @@ namespace trabFinal_Misael_Gabriel.View
             dlg.Turno = turn;
             dlg.Acao = p.Nome + " Atacou " + m.personagem.Nome + " por " + dano + " de dano";
             DetalheLogDAO.CadastrarLogDet(dlg);
+            turn = turn + 1;
             if (m.personagem.VidaAtual < 0)
             {
                 DetalheLog dl = new DetalheLog();

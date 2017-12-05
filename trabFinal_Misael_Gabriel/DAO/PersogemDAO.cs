@@ -35,8 +35,8 @@ namespace trabFinal_Misael_Gabriel.DAO
                 //gravando usuario no banco
                 ctx.Personagens.Add(p);
                 ctx.SaveChanges();
-                Personagem a = new Personagem();
-                return ctx.Personagens.FirstOrDefault(x => DateTime.Equals(x.UltimaConexao, p.UltimaConexao) && x.Nome.Equals(p.Nome) && x.user.IDUsuario == p.user.IDUsuario);
+
+            return p;
 
         }
         //rtorna todos
@@ -50,13 +50,18 @@ namespace trabFinal_Misael_Gabriel.DAO
             return ctx.Personagens.Where(x => x.user.IDUsuario == id).ToList();
         }
       
+
         //retorna os personagem do usuario
         public static List<Personagem> RetornarPersonagensUsuario(Usuario u)
         {
             return ctx.Personagens.Where(x => x.user.IDUsuario==u.IDUsuario).ToList();
         }
 
-
+        //retorna os chars dos usuarios
+        public static List<Personagem> RetornarPersonagensDeUsuarios()
+        {
+            return ctx.Personagens.Where(x => x.user.Adm == false && !x.user.Login.Equals("Cemitério")).ToList();
+        }
         //retorna os char do adm
         public static List<Personagem> returnPAdm()
         {
@@ -74,6 +79,8 @@ namespace trabFinal_Misael_Gabriel.DAO
             return ctx.Personagens.Where(x => x.user.IDUsuario == id && x.VidaAtual!=x.VidaTotal).ToList();
         }
 
+        //!!!!!!!!!!!!!!!!
+        //usar para a deleção
         //cura todos os personagens feridos dele
         public static void curarFeridos(int id)
         {
@@ -86,6 +93,26 @@ namespace trabFinal_Misael_Gabriel.DAO
                 ctx.SaveChanges();
             }
         }
+
+        //deleção da conta 
+        //só manda os personagens para o cemit´erio
+        public static void DeletarConta(int id)
+        {
+            Usuario u = new Usuario();
+            u.IDUsuario = 9;
+            u = UsuarioDAO.BuscarUsuarioPorId(u);
+
+            List<Personagem> p = ctx.Personagens.Where(x => x.user.IDUsuario == id).ToList();
+            for (int i = 0; i < p.Count; i++)
+            {
+                Personagem pe = p[i];
+                
+                pe.user = u;
+                ctx.Entry(pe).State = EntityState.Modified;
+                ctx.SaveChanges();
+            }
+        }
+
         //update
         public static bool AlterarPersonagem(Personagem p)
         {
@@ -111,6 +138,7 @@ namespace trabFinal_Misael_Gabriel.DAO
             //manda para o id dessa conta
             //cemiterio aq está com id 9
             //trocar dps
+            //nome do cemiterio vai ser 666
             try
             {
                 ctx.Entry(p).State = EntityState.Modified;

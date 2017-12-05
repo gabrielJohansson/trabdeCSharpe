@@ -63,17 +63,16 @@ namespace trabFinal_Misael_Gabriel.View
 
         private void btnRegistros_Click(object sender, RoutedEventArgs e)
         {
-            //abre a lista de missao
-            //datagrid q n carrega td,carrega quando vc for escolhendo 
-            //seleciona a missao e abre os logs com o dia e personagem
-            //ao clickar abre os detalhes do combate!
+            frmSelLogADM frm = new frmSelLogADM(u.IDUsuario);
+            frm.Show();
+            Close();
         }
 
         private void btnStatus_Click(object sender, RoutedEventArgs e)
         {
-            //abre uma lista de personagens e sua ultima missao ao lado
-            //select abre o log por data
-            //select abre os detalhes do combate!
+            frmLisPersonagemADM frm = new frmLisPersonagemADM(u.IDUsuario);
+            frm.Show();
+            Close();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)

@@ -27,6 +27,7 @@
 
         <DataGrid x:Name="dtg" Margin="5,5,5,5" AutoGenerateColumns="False" Grid.Row="3" Grid.Column="1" IsReadOnly="True" Grid.ColumnSpan="3">
             <DataGrid.Columns>
+                <DataGridTextColumn x:Name="colNome"  Header="Nome" Width="30*" Binding="{Binding Nome}"/>
                 <DataGridTextColumn x:Name="colLogin"  Header="Login" Width="30*" Binding="{Binding Login}"/>
                 <DataGridTextColumn x:Name="colCon"  Header="Última Conexão" Width="40*" Binding="{Binding UltimaConexao}"/>
             </DataGrid.Columns>

@@ -63,6 +63,9 @@ namespace trabFinal_Misael_Gabriel.View
                 //remover personagem vai ser a troca de idusuario para um user definido.
                 //esse uservai ser como um cemiterio de personagens
                 //para n dar conflito com os logs
+                //lembar disso !!!!!!!!!!!!!!!!!!!!!!!!
+                //qnd for deletar a conta fazer o msm so q com tds
+                //:)
                  if(PersogemDAO.RemoverPersonagem(p))
                   {
                       MessageBox.Show("Sucesso");

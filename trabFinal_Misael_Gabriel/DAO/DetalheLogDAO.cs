@@ -19,5 +19,10 @@ namespace trabFinal_Misael_Gabriel.DAO
                 ctx.SaveChanges();
                 return true;          
         }
+
+        public static List<DetalheLog> RetornarLog(int id)
+        {
+            return ctx.DetalheLog.Where(x => x.log.IDLogCombate == id).ToList();
+        }
     }
 }

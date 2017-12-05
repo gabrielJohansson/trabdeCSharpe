@@ -37,12 +37,7 @@ namespace trabFinal_Misael_Gabriel.View
             Close();
         }
 
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            u.UltimaConexao = DateTime.Now;
-            UsuarioDAO.AlterarUsuario(u);
-        }
-
+      
         private void btnCadastro_Click(object sender, RoutedEventArgs e)
         {
             //att
@@ -92,6 +87,23 @@ namespace trabFinal_Misael_Gabriel.View
             txtNome.Text = u.Nome;
             txtSenha.Text = u.Senha;
             txtUsuario.Text = u.Login;
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult resultado = MessageBox.Show("Deseja Deletar Sua Conta?", "Confirmação de Deleção", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (resultado == MessageBoxResult.No)
+            {
+                MessageBox.Show("Deleção Cancelada");
+            }
+            else
+            {
+                PersogemDAO.DeletarConta(u.IDUsuario);
+                UsuarioDAO.RemoverUsuario(u);
+                frmPageInicial frm = new frmPageInicial();
+                frm.Show();
+                Close();
+            }
         }
     }
 }

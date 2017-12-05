@@ -62,10 +62,9 @@ namespace trabFinal_Misael_Gabriel.View
 
         private void btnStatus_Click(object sender, RoutedEventArgs e)
         {
-            //vai estar separado por char
-            //clickou no char vai abrir uma barra de data
-            //clickou na data abre a missao
-            //clickou na missao abre o log de battle dessa missao deste dia/hora
+            SelLogU frm = new SelLogU(u.IDUsuario);
+            frm.Show();
+            Close();
         }
 
         private void btnEditar_Click(object sender, RoutedEventArgs e)

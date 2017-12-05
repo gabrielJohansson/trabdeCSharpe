@@ -116,6 +116,12 @@
     <Compile Include="View\frmCadastroUsuario.xaml.cs">
       <DependentUpon>frmCadastroUsuario.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\frmDetalheLog.xaml.cs">
+      <DependentUpon>frmDetalheLog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmLisPersonagemADM.xaml.cs">
+      <DependentUpon>frmLisPersonagemADM.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\frmListMissaoAdm.xaml.cs">
       <DependentUpon>frmListMissaoAdm.xaml</DependentUpon>
     </Compile>
@@ -128,11 +134,17 @@
     <Compile Include="View\frmPageInicial.xaml.cs">
       <DependentUpon>frmPageInicial.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\frmSelLogADM.xaml.cs">
+      <DependentUpon>frmSelLogADM.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\frmSelMissao.xaml.cs">
       <DependentUpon>frmSelMissao.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\frmUsuario.xaml.cs">
       <DependentUpon>frmUsuario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SelLogU.xaml.cs">
+      <DependentUpon>SelLogU.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -214,6 +226,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\frmDetalheLog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\frmLisPersonagemADM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\frmListMissaoAdm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -230,11 +250,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\frmSelLogADM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\frmSelMissao.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\frmUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SelLogU.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

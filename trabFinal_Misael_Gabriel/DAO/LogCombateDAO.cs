@@ -33,7 +33,17 @@ namespace trabFinal_Misael_Gabriel.DAO
         public static LogCombate BuscarLogsDosCombatesPorId(LogCombate lg)
         {
             return ctx.LogsDosCombates.Find(lg.IDLogCombate);
-        }       
+        }
+
+        public static List<LogCombate> RetornarLogP(int id)
+        {
+            return ctx.LogsDosCombates.Where(x => x.personagem.IDPesonagem == id).Include(x => x.personagem).Include(x => x.missao).ToList();
+        }
+
+        public static List<LogCombate> RetornarLogM(int id)
+        {
+            return ctx.LogsDosCombates.Where(x => x.missao.IDMissao== id).Include(x => x.personagem).Include(x => x.missao).ToList();
+        }
 
     }
 }
