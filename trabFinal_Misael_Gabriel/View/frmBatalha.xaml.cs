@@ -153,7 +153,7 @@ namespace trabFinal_Misael_Gabriel.View
         {
             
             txtTrun.Text = turn.ToString();
-            int dano = Utilidade.atk(m.personagem.Ataque, p.Elemento, m.personagem.Elemento);
+            int dano = Utilidade.atk(p.Ataque, p.Elemento, m.personagem.Elemento);
             m.personagem.VidaAtual = m.personagem.VidaAtual - (Utilidade.atk(p.Ataque,m.personagem.Elemento,p.Elemento));
             txtP2.Text = "Vida :" + m.personagem.VidaAtual + "/" + m.personagem.VidaTotal;
 

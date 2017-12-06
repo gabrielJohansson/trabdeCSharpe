@@ -106,7 +106,7 @@ namespace trabFinal_Misael_Gabriel.View
                         p.VidaTotal = 900;
                         p.VidaAtual = p.VidaTotal;
                         p.Iniciativa = 3;
-                        p.Ataque = 30;
+                        p.Ataque = 100;
                         break;
                     case "Ar":
                         p.VidaTotal = 700;
