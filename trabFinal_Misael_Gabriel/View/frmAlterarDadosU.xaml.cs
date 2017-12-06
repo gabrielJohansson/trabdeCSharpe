@@ -48,6 +48,7 @@ namespace trabFinal_Misael_Gabriel.View
                 t = u;
                 t.Login = txtUsuario.Text;
                 t.Nome = txtNome.Text;
+                t.Senha = txtSenha.Text;
 
                     MessageBoxResult resultado = MessageBox.Show("Deseja Alterar seus Dados?", "Confirmação de Alteração", MessageBoxButton.YesNo, MessageBoxImage.Question);
                     if (resultado == MessageBoxResult.No)

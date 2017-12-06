@@ -106,25 +106,25 @@ namespace trabFinal_Misael_Gabriel.View
                         p.VidaTotal = 900;
                         p.VidaAtual = p.VidaTotal;
                         p.Iniciativa = 3;
-                        p.Ataque = 40;
+                        p.Ataque = 30;
                         break;
                     case "Ar":
                         p.VidaTotal = 700;
                         p.VidaAtual = p.VidaTotal;
                         p.Iniciativa = 5;
-                        p.Ataque = 20;
+                        p.Ataque = 60;
                         break;
                     case "Terra":
                         p.VidaTotal = 1000;
                         p.VidaAtual = p.VidaTotal;
                         p.Iniciativa = 1;
-                        p.Ataque = 60;
+                        p.Ataque = 20;
                         break;
                     case "Fogo":
                         p.VidaTotal = 800;
                         p.VidaAtual = p.VidaTotal;
                         p.Iniciativa = 4;
-                        p.Ataque = 30;
+                        p.Ataque = 40;
                         break;
                 }
 
