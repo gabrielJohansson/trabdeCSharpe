@@ -123,25 +123,25 @@ namespace trabFinal_Misael_Gabriel.View
                 switch (p.Elemento)
                 {
                     case "Agua":
-                        p.VidaTotal = 900+(p.Level*100);
+                        p.VidaTotal = 600+(p.Level*100);
                         p.VidaAtual = p.VidaTotal;
                         p.Iniciativa = 3;
                         p.Ataque = 40 + (p.Level * 10);
                         break;
                     case "Ar":
-                        p.VidaTotal = 700 + (p.Level * 100);
+                        p.VidaTotal = 500 + (p.Level * 100);
                         p.VidaAtual = p.VidaTotal;
                         p.Iniciativa = 5;
                         p.Ataque = 20 + (p.Level * 10);
                         break;
                     case "Terra":
-                        p.VidaTotal = 1000 + (p.Level * 100);
+                        p.VidaTotal = 700 + (p.Level * 100);
                         p.VidaAtual = p.VidaTotal;
                         p.Iniciativa = 1;
                         p.Ataque = 60 + (p.Level * 10);
                         break;
                     case "Fogo":
-                        p.VidaTotal = 800 + (p.Level * 100);
+                        p.VidaTotal = 400 + (p.Level * 100);
                         p.VidaAtual = p.VidaTotal;
                         p.Iniciativa = 4;
                         p.Ataque = 30 + (p.Level * 10);
