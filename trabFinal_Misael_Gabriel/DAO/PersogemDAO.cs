@@ -99,8 +99,8 @@ namespace trabFinal_Misael_Gabriel.DAO
         public static void DeletarConta(int id)
         {
             Usuario u = new Usuario();
-            u.IDUsuario = 9;
-            u = UsuarioDAO.BuscarUsuarioPorId(u);
+
+            u = UsuarioDAO.RetornaCem();
 
             List<Personagem> p = ctx.Personagens.Where(x => x.user.IDUsuario == id).ToList();
             for (int i = 0; i < p.Count; i++)
@@ -131,8 +131,9 @@ namespace trabFinal_Misael_Gabriel.DAO
         public static bool RemoverPersonagem(Personagem p)
         {
             Usuario u = new Usuario();
-            u.IDUsuario = 9;
-            u= UsuarioDAO.BuscarUsuarioPorId(u);
+
+            u = UsuarioDAO.RetornaCem();
+
             p.user = u;
             //vai mandar para o cemitério
             //manda para o id dessa conta

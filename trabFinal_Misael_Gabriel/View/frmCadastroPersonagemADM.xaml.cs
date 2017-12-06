@@ -163,7 +163,7 @@ namespace trabFinal_Misael_Gabriel.View
                     if (PersogemDAO.CadastrarPersonagem(p))
                     {
                         n.Name = m.Name; n.Descricao = m.Descricao; n.ExperienciaConcedida = n.ExperienciaConcedida; n.GoldConcedido = n.GoldConcedido; n.personagem = p ;
-                        MissaoDAO.CadastrarMissao(m);
+                        MissaoDAO.CadastrarMissao(n);
                         MessageBox.Show("Cadastro Efetuado com Sucesso ");
                         frmAdm frm = new frmAdm(u.IDUsuario);
                         frm.Show();

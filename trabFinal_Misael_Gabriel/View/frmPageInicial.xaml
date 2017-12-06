@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:trabFinal_Misael_Gabriel.View"
         mc:Ignorable="d"
-        Title="Jogo RPG TROCAR NOME/SO colocar como login" Height="600" Width="600" MaxHeight="600" MaxWidth="600" MinHeight="600" MinWidth="600" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
+        Title="Login" Height="600" Width="600" MaxHeight="600" MaxWidth="600" MinHeight="600" MinWidth="600" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
     <Window.Background>
         <ImageBrush ImageSource="/trabFinal_Misael_Gabriel;component/Images/principal.jpg" />
     </Window.Background>

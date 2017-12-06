@@ -71,10 +71,10 @@ namespace trabFinal_Misael_Gabriel.View
         {
             //mandar para a pagina de cadastro
            // Usuario u = new Usuario();
-           // u.Adm = true;
-           // u.Login = "ADM";
-           // u.Senha = "123";
-          //  UsuarioDAO.CadastrarUsuario(u);
+            //u.Adm = true;
+            //u.Login = "ADM";
+            //u.Senha = "123";
+          // UsuarioDAO.CadastrarUsuario(u);
             //xxxxxxxx
             frmCadastroUsuario frm = new frmCadastroUsuario();
             frm.Show();

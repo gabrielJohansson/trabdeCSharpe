@@ -55,7 +55,7 @@ namespace trabFinal_Misael_Gabriel.View
         private void btnHeal_Click(object sender, RoutedEventArgs e)
         {
             //cura tds os perssonagens do user
-            if (u.Gold > u.Gold + (100 * cboPersonagem.Items.Count) )
+            if (0<=  u.Gold - (100 * cboPersonagem.Items.Count) )
             {
                 PersogemDAO.curarFeridos(u.IDUsuario);
                 u.Gold = u.Gold - (100 * cboPersonagem.Items.Count);
@@ -88,7 +88,7 @@ namespace trabFinal_Misael_Gabriel.View
             p = PersogemDAO.BuscarPersonagemPorId(p);
             txtPersonagem.Text = p.Nome;
             //escolhe o q ta no selecionado
-            if (u.Gold > u.Gold + 100 )
+            if (0<= u.Gold - 100 )
             {
 
                 u.Gold = u.Gold - 100;
